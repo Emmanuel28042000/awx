@@ -1,0 +1,31 @@
+sudo yum install oracle-epel-release-el7
+sudo yum install ansible
+
+
+yum install -y docker-engine btrfs-progs btrfs-progs-devel
+
+
+
+RHEL
+Docker Compose install
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+Apply execute permission
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+Verify installation
+
+docker-compose -v
+
+
+
+sudo usermod -aG docker <username>
+
+sudo chown root:docker /var/run/docker.sock
+sudo chmod 660 /var/run/docker.sock
+sudo systemctl restart docker
+
+
+
+https://oracle-base.com/articles/linux/awx-installation-on-ol7-using-the-docker-compose-method

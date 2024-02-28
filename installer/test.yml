@@ -1,0 +1,15 @@
+---
+- name: test
+  hosts: localhost
+  become: false
+  gather_facts: true
+
+  tasks:
+      
+    - name: test
+      shell: ls -lrt 
+      register: done
+     
+    - debug: 
+        var: done
+     
